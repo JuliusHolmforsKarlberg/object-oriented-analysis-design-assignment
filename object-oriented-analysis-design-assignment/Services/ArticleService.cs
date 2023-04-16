@@ -12,7 +12,6 @@ public class ArticleService
         _articles = new List<ArticleEntity>();
         _authors = new List<Author>();
 
-        // Add some sample data
         _authors.Add(new Author { Id = 1, Name = "Hans Mattin-Lassei", Email = "hans@example.com", Biography = "Hans är en bästsäljande författare noveller!" });
         _authors.Add(new Author { Id = 2, Name = "Tommy Mattin-Lassei", Email = "tommy@example.com", Biography = "Tommy är en prisvinnande poet!" });
 

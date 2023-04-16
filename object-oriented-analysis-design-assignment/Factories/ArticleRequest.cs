@@ -2,5 +2,6 @@
 {
     public class ArticleRequest
     {
+        public object Id { get; internal set; }
     }
 }

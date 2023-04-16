@@ -16,6 +16,14 @@ internal class Program
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddScoped<IArticlesRequest>();
+        builder.Services.AddScoped<IArticlesResponse>();
+        builder.Services.AddScoped<ArticlesRepository>();
+        builder.Services.AddScoped<IArticles>();
+        builder.Services.AddScoped<IArticlesBlog>();
+        builder.Services.AddScoped<IArticlesNews>();
+        builder.Services.AddScoped<ICreateArticle>();
+
 
         builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString(\"Sql\")));")));
 
@@ -26,6 +34,8 @@ internal class Program
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
+        app.UseFileServer();
+        app.UseRouting();
 
         app.Run();
     }
