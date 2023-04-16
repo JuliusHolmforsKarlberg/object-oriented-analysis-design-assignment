@@ -13,22 +13,22 @@ namespace object_oriented_analysis_design_assignment.Controllers
             _authorService = new AuthorService();
         }
 
-        public IEnumerable<Author> Get()
+        public IEnumerable<AuthorEntity> Get()
         {
             return _authorService.GetAllAuthors();
         }
 
-        public Author Get(int id)
+        public AuthorEntity Get(int id)
         {
             return _authorService.GetAuthorById(id);
         }
 
-        public void Post([FromBody] Author author)
+        public void Post([FromBody] AuthorEntity author)
         {
             _authorService.AddAuthor(author);
         }
 
-        public void Put(int id, [FromBody] Author author)
+        public void Put(int id, [FromBody] AuthorEntity author)
         {
             _authorService.UpdateAuthor(id, author);
         }

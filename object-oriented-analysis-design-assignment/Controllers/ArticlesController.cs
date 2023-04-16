@@ -7,6 +7,33 @@ using object_oriented_analysis_design_assignment.Models.Entities;
 
 namespace object_oriented_analysis_design_assignment.Controllers
 {
+    [Route("api/[Controller]")]
+    [ApiController]
+    public class ArticlesController : Controller
+    {
+        private readonly ArticleService _articles;
+
+        public ArticlesController(ArticleService articles)
+        {
+            _articles = articles;
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _articles.GetAllAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ArticleRegistrationModel model)
+        {
+            await _articles.CreateAsync(model);
+            return NoContent();
+        }
+    }
+}
+{
     [Route("api/[controller]")]
     [ApiController]
     public class ArticlesController : ControllerBase

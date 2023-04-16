@@ -1,6 +1,6 @@
 ﻿namespace object_oriented_analysis_design_assignment.Models
 {
-    public class Author
+    public class AuthorEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using object_oriented_analysis_design_assignment.Models;
 using object_oriented_analysis_design_assignment.Models.Entities;
 using System.Collections.Generic;
 
@@ -10,5 +11,6 @@ public class DataContext : DbContext
     }
 
     public DbSet<ArticlesEntity> Articles { get; set; }
+    public DbSet<AuthorEntity> Authors { get; set; }
 
 }
